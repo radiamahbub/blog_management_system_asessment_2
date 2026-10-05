@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add Blog
+{% endblock title %}
+    
+{% block content %}
+    
+    <h1 class="text-center m-3">Post Your Blog Here</h1>
+    <form action="" method="POST" enctype="multipart/form-data" class="m-3">
+        {% csrf_token %}
+        {{form_data.as_p}}
+        
+        <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+            
+{% endblock content %}
+            
+
+
+
+
+{% comment %} <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Title</label>
+            <input type="text" name="username" value="{{b_data.title}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Author Name</label>
+            <input type="text" name="author_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Content</label>
+            <textarea name="content" class="form-control" id=""></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Catagory</label>
+            <select name="catagory" class="form-select" aria-label="Default select example">
+            <option selected>Select</option>
+            <option value="Education">Education</option>
+            <option value="Techlonogy">Techlonogy</option>
+            <option value="Sports">Sports</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Blog Image</label>
+            {% if b_data.blog_image %}
+                    <img src="{{b_data.blog_image.url}}" width="100px" alt="" class="m-2">
+            {% else %}
+                    No preview    
+            {% endif %}
+            <input type="file" name="blog_image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Publish Date</label>
+            <input type="date" name="publish_date" value="{{b_data.publish_data|date:'Y-m-d'}}" class="form-control" id="exampleInputPassword1">
+        </div> {% endcomment %}

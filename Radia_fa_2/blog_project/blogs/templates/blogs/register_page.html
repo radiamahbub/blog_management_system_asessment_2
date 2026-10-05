@@ -1,0 +1,124 @@
+{% extends 'auth_base.html' %}
+
+
+{% block title %}
+    Register
+{% endblock title %}
+
+
+{% block content %}
+
+<h1 class="m-5 text-center">Register Page</h1>
+<form method="POST">
+    {% csrf_token %}
+  <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">User Name</label>
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+            <input type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="c_password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        <a href="{% url 'login' %}">Already have an account?</a>
+  
+  
+  {% comment %} <button type="submit" class="btn btn-primary">Register</button> {% endcomment %}
+ 
+</form>
+
+    
+{% endblock content %}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+    <title>
+        
+        {% block title %}
+            Register
+        {% endblock title %}
+            
+    </title>
+  </head>
+  <body>
+    
+    <div class="container">
+        
+    {% block content %}
+    
+    <h1 class="m-3 text-center">Register Here</h1>
+    <form action="" method="POST" class="m-3">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">User Name</label>
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+            <input type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="c_password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Enter</button>
+        </div>
+    </form>
+            
+    {% endblock content %}
+            
+    </div>
+
+    <!-- Bootstrap JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html> {% endcomment %}

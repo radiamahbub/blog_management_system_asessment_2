@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add Blog
+{% endblock title %}
+    
+{% block content %}
+    
+    <h1 class="text-center m-3">Blogs</h1>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>SL</th>
+            <th>Title</th>
+            <th>Author Name</th>
+            <th>Content</th>
+            <th>Catagory</th>
+            <th>Image</th>
+            <th>Publish Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in b_data %}
+           <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{data.title}}</td>
+                <td>{{data.author_name}}</td>
+                <td>{{data.content}}</td>
+                <td>{{data.catagory}}</td>
+                <td>
+                {% if data.blog_image %}
+                    <img src="{{data.blog_image.url}}" width="100px" alt="">
+                {% else %}
+                    No preview      
+                {% endif %}
+                    </td>
+                <td>{{data.publish_date}}</td>
+                <td>
+                            <a href="{% url 'blog_update' data.id %}" class="btn btn-info">Edit</a>
+                            <a href="{% url 'blog_delete' data.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    
+            
+{% endblock content %}
+            
+{% comment %} <td>{% if data.project_image %}
+                        <img src="{{data.project_image.url}}" width="100px" alt="">
+                        {% else %}
+                            No preview    
+                        {% endif %}</td> {% endcomment %}
